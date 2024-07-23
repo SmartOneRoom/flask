@@ -1,41 +1,35 @@
-<!--
-<!DOCTYPE html>
-<html>
-<head>
-    <title>실시간 웹캠 스트리밍</title>
-</head>
-<body>
-    
-    <h1>실시간 웹캠 스트리밍</h1>
-    <img src="{{ url_for('video_feed') }}" width="1024" height="800">
-</body>
-</html>
--->
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>웹캠 스트리밍과 물체 검색 서비스</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Real-Time Segmentation</title>
+    <link rel="stylesheet" href="./static/style.css">
 </head>
 <body>
 
-<h1>웹캠 스트리밍과 물체 검색 서비스</h1>
+<h1>Real-Time Segmentation</h1>
 
-<textarea id="sourceText" placeholder="찾고 싶은 물체를 입력하세요: "></textarea>
-<br>
-<button id="searchButton">검색</button>
-
-<div id="summary">
-    <h2>물체의 위치:</h2>
-    <p id="result"></p>
+<div class="input-area">
+    <textarea id="sourceText" placeholder="찾고 싶은 것을 영어로 입력하세요 : "></textarea>
+    <button id="searchButton">Search</button>
 </div>
 
-<div id="webcam">
-    <h2>실시간 웹캠 스트리밍</h2>
-    <img id="webcamFeed" width="1024" height="800">
+<div class="content-wrapper">
+    <div id="summary">
+        <h2>Segmentation Result</h2>
+        <p id="result"></p>
+        <div class="image-container">
+            <img id="segmentation" alt="Segmentation Feed">
+        </div>
+    </div>
+
+    <div id="webcam">
+        <h2>Real-Time Cam</h2>
+        <div class="image-container">
+            <img id="webcamFeed" alt="Webcam Feed">
+        </div>
+    </div>
 </div>
 
 <script src="./static/script.js"></script>
