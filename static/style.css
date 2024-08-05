@@ -5,7 +5,6 @@
     font-style: normal;
 }
 
-/* styles.css */
 body {
     background-color: #FEFEFE;
     font-family: 'Freesentation-9Black';
@@ -15,8 +14,8 @@ body {
     grid-template-columns: 1fr 1fr;
     grid-template-areas: 
         "header header"
-        "input input"
-        "summary webcam";
+        "summary webcam"
+        "input input";
     gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
@@ -31,28 +30,8 @@ h1 {
     grid-area: input;
     display: flex;
     justify-content: center;
-    align-items: center; /* 수직 정렬을 위쪽으로 */
-    gap: 10px; /* 버튼과 텍스트 영역 사이의 간격 */
-}
-
-textarea {
-    width: 80%;
-    height: 25px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    padding: 10px;
-    font-size: 16px;
-    transition: border-color 0.3s;
-    outline: none;
-}
-
-textarea:hover {
-    border-color: #888;
-}
-
-textarea:focus {
-    border-color: #333;
-    box-shadow: 0 0 5px rgba(51, 51, 51, 0.5);
+    align-items: center;
+    width: 100%;
 }
 
 button {
@@ -88,35 +67,34 @@ button:active {
 
 .image-container {
     width: 100%;
-    max-width: 600px; /* 크기를 더 크게 설정 */
+    max-width: 600px;
     margin: 0 auto;
 }
 
 #webcamFeed, #segmentation {
     width: 100%;
     height: auto;
-    max-height: 450px; /* 크기를 더 크게 설정 */
+    max-height: 450px;
     object-fit: contain;
     border-radius: 10px;
 }
 
 #segmentation {
-    display: none; /* 초기에는 숨김 */
+    display: none;
 }
 
 .content-wrapper {
-    display: contents; /* 그리드 레이아웃을 body에 적용하기 위해 변경 */
+    display: contents;
 }
 
-/* 반응형을 위한 미디어 쿼리 */
 @media (max-width: 1024px) {
     body {
         grid-template-columns: 1fr;
         grid-template-areas: 
             "header"
-            "input"
             "summary"
-            "webcam";
+            "webcam"
+            "input";
     }
     
     .image-container {
