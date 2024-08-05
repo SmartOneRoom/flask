@@ -1,30 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FastSAM Segmentation</title>
-    <style>
-        .video-container {
-            display: flex;
-            justify-content: space-around;
-        }
-        .video {
-            width: 45%;
-        }
-    </style>
+    <title>Real-Time Segmentation</title>
+    <link rel="stylesheet" href="./static/style.css">
 </head>
 <body>
-    <h1>FastSAM Segmentation</h1>
-    <div class="video-container">
-        <div class="video">
-            <h2>Original Video</h2>
-            <img src="{{ url_for('video_feed') }}" alt="Original Video Feed">
-        </div>
-        <div class="video">
-            <h2>Segmented Video</h2>
-            <img src="{{ url_for('segmentation_feed') }}" alt="Segmented Video Feed">
+
+<h1>Real-Time Segmentation</h1>
+
+<div class="content-wrapper">
+    <div id="summary">
+        <h2>Segmentation Result</h2>
+        <p id="result"></p>
+        <div class="image-container">
+            <img id="segmentation" alt="Segmentation Feed">
         </div>
     </div>
+
+    <div id="webcam">
+        <h2>Real-Time Cam</h2>
+        <div class="image-container">
+            <img id="webcamFeed" alt="Webcam Feed">
+        </div>
+    </div>
+</div>
+
+<div class="input-area">
+    <button id="searchButton">Segmentation start</button>
+</div>
+
+<script src="./static/script.js"></script>
 </body>
 </html>
