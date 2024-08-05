@@ -1,0 +1,107 @@
+@font-face {
+    font-family: 'Freesentation-9Black';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-9Black.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+}
+
+body {
+    background-color: #FEFEFE;
+    font-family: 'Freesentation-9Black';
+    text-align: center;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+        "header header"
+        "summary webcam"
+        "input input";
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #333;
+    grid-area: header;
+}
+
+.input-area {
+    grid-area: input;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+button {
+    color: #090909;
+    padding: 0.7em 1.7em;
+    font-size: 18px;
+    border-radius: 0.5em;
+    background: #e8e8e8;
+    cursor: pointer;
+    border: 1px solid #e8e8e8;
+    transition: all 0.3s;
+    box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+}
+
+button:active {
+    color: #666;
+    box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+}
+
+#summary {
+    grid-area: summary;
+    background-color: #e5e5e5;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+#webcam {
+    grid-area: webcam;
+    background-color: #e5e5e5;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.image-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#webcamFeed, #segmentation {
+    width: 100%;
+    height: auto;
+    max-height: 450px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+#segmentation {
+    display: none;
+}
+
+.content-wrapper {
+    display: contents;
+}
+
+@media (max-width: 1024px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "header"
+            "summary"
+            "webcam"
+            "input";
+    }
+    
+    .image-container {
+        max-width: 100%;
+    }
+    
+    #webcamFeed, #segmentation {
+        max-height: 300px;
+    }
+}
